@@ -181,14 +181,22 @@
     .print-bar { text-align: center; }
 
     @media print {
-      body { padding: 0; }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+      body {
+        padding: 0;
+        max-width: none;
+        font-size: 9pt;
+      }
       .print-bar { display: none; }
-      .section h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .diff-grid .diff-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .gold-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .cred-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .header { break-after: avoid; }
+      .diff-grid { break-inside: avoid; }
       .columns { break-inside: avoid; }
+      .section { break-inside: avoid; }
+      .footer { break-inside: avoid; }
     }
   </style>
 </head>
