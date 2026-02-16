@@ -163,12 +163,40 @@
     }
     .footer strong { color: #1a2744; }
 
+    /* PRINT BUTTON */
+    .print-btn {
+      display: inline-block;
+      margin: 15px auto;
+      padding: 10px 25px;
+      background: #1a2744;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      cursor: pointer;
+      text-align: center;
+    }
+    .print-btn:hover { background: #2a3f6b; }
+    .print-bar { text-align: center; }
+
     @media print {
       body { padding: 0; }
+      .print-bar { display: none; }
+      .section h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .diff-grid .diff-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .gold-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cred-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .header { break-after: avoid; }
+      .columns { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
+
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+  </div>
 
   <!-- HEADER -->
   <div class="header">
