@@ -181,36 +181,14 @@
     .print-bar { text-align: center; }
 
     @media print {
-      *, *::before, *::after {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        color-adjust: exact !important;
-      }
-      @page { size: letter; margin: 0.25in; }
-      body { padding: 0; max-width: none; font-size: 8pt; line-height: 1.25; }
+      body { padding: 0; }
       .print-bar { display: none; }
-      .header { margin-bottom: 5px; padding-bottom: 4px; border-bottom-width: 3px; }
-      .header-left h1 { font-size: 14pt; }
-      .header-left p { font-size: 8.5pt; }
-      .header-right { font-size: 7.5pt; line-height: 1.4; }
-      .diff-grid { gap: 4px; margin-top: 2px; }
-      .diff-item { padding: 3px 3px; }
-      .diff-item .num { font-size: 12pt; }
-      .diff-item .label { font-size: 6.5pt; }
-      .columns { margin-top: 5px !important; gap: 12px; }
-      .section { margin-bottom: 3px; }
-      .section h2 { padding: 2px 6px; margin-bottom: 3px; font-size: 8.5pt; }
-      .section h3 { margin-top: 2px; margin-bottom: 1px; font-size: 8pt; }
-      .section p, .section li { font-size: 7pt; margin-bottom: 1px; }
-      .section ul { padding-left: 10px; }
-      .section ul li::before { font-size: 6pt; margin-right: 3px; }
-      .gold-box { padding: 4px 6px; margin-bottom: 3px; }
-      .gold-box h3 { font-size: 8pt; margin-bottom: 1px; }
-      .gold-box p { font-size: 7pt; }
-      .cred-grid { gap: 3px; }
-      .cred-item { padding: 2px 4px; font-size: 6.5pt; }
-      .cred-item strong { font-size: 7pt; }
-      .footer { margin-top: 3px; padding-top: 3px; font-size: 7pt; border-top-width: 3px; }
+      .section h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .diff-grid .diff-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .gold-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cred-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .header { break-after: avoid; }
+      .columns { break-inside: avoid; }
     }
   </style>
 </head>
