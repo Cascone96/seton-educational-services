@@ -189,14 +189,25 @@
       body {
         padding: 0;
         max-width: none;
-        font-size: 9pt;
+        font-size: 8.5pt;
+        line-height: 1.35;
       }
       .print-bar { display: none; }
-      .header { break-after: avoid; }
-      .diff-grid { break-inside: avoid; }
-      .columns { break-inside: avoid; }
-      .section { break-inside: avoid; }
-      .footer { break-inside: avoid; }
+      .header { margin-bottom: 8px; padding-bottom: 6px; }
+      .diff-grid { gap: 5px; margin-top: 3px; }
+      .diff-item { padding: 5px 4px; }
+      .diff-item .num { font-size: 14pt; }
+      .columns { margin-top: 8px !important; gap: 14px; }
+      .section { margin-bottom: 6px; }
+      .section h2 { padding: 3px 8px; margin-bottom: 5px; font-size: 9.5pt; }
+      .section h3 { margin-top: 4px; margin-bottom: 2px; }
+      .section p, .section li { font-size: 8pt; margin-bottom: 2px; }
+      .gold-box { padding: 5px 8px; margin-bottom: 8px; }
+      .gold-box p { font-size: 8pt; }
+      .cred-grid { gap: 4px; }
+      .cred-item { padding: 4px 6px; font-size: 7.5pt; }
+      .cred-item strong { font-size: 8pt; }
+      .footer { margin-top: 6px; padding-top: 6px; }
     }
   </style>
 </head>
