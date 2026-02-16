@@ -487,10 +487,56 @@ section {
   background: var(--gold);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.testimonials-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-arrow {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s, color 0.3s;
+  line-height: 1;
+}
+
+.testimonial-arrow:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.testimonials-scroll-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonials-scroll-track {
+  display: flex;
+  width: 400%;
+  animation: scroll-left 42s ease-in-out infinite;
+}
+
+@keyframes scroll-left {
+  0%, 42% {
+    transform: translateX(0);
+  }
+  48%, 90% {
+    transform: translateX(-25%);
+  }
+  95%, 100% {
+    transform: translateX(-50%);
+  }
 }
 
 .testimonial-card {
@@ -498,6 +544,8 @@ section {
   padding: 30px;
   border-radius: 8px;
   border-left: 4px solid var(--gold);
+  width: 25%;
+  box-sizing: border-box;
 }
 
 .testimonial-card blockquote {

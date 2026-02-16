@@ -124,7 +124,7 @@
             <li>Strategic planning facilitation</li>
             <li>Leadership style assessment</li>
             <li>School culture improvement</li>
-            <li>Pastor-principal partnership</li>
+            <li>Pastor-principal/Board-principal Partnership</li>
             <li>Teacher recruitment and retention</li>
           </ul>
         </div>
@@ -190,7 +190,7 @@
 
         <!-- GROWTH — FEATURED -->
         <div class="package-card featured" style="overflow:hidden;">
-          <div class="featured-badge">Most Popular</div>
+          <div class="featured-badge">Best Value</div>
           <div class="package-header">
             <h3>Growth</h3>
             <div class="price">$1,000<span class="price-period"> / month</span></div>
@@ -304,20 +304,62 @@
         <div class="accent-line"></div>
         <p>Feedback from principals, superintendents, and colleagues</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <blockquote>"Dr. Vince Cascone transformed our principal mentoring program. New principals now have the support and structure they need to succeed from day one."</blockquote>
-          <cite>— [Superintendent Name], [Diocese Name]</cite>
+      <div class="testimonials-carousel">
+        <button class="testimonial-arrow testimonial-arrow-left" aria-label="Previous testimonial">&#8249;</button>
+        <div class="testimonials-scroll-wrapper">
+          <div class="testimonials-scroll-track">
+            <div class="testimonial-card">
+              <blockquote>"Dr. Cascone served our archdiocese with distinction as the Superintendent of Schools, combining strong leadership with a deep commitment to the mission of Catholic education. Principals consistently relied on his wisdom, integrity, practical guidance and leadership skills. I am confident this consulting ministry will be a tremendous blessing to Catholic school leaders and the communities they serve."</blockquote>
+              <cite>— Archbishop Emeritus Joseph Naumann, Archdiocese of Kansas City in Kansas</cite>
+            </div>
+            <div class="testimonial-card">
+              <blockquote>"For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect."</blockquote>
+              <cite>— Fr. Pat Rush, Former Pastor</cite>
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="testimonial-card">
+              <blockquote>"Dr. Cascone served our archdiocese with distinction as the Superintendent of Schools, combining strong leadership with a deep commitment to the mission of Catholic education. Principals consistently relied on his wisdom, integrity, practical guidance and leadership skills. I am confident this consulting ministry will be a tremendous blessing to Catholic school leaders and the communities they serve."</blockquote>
+              <cite>— Archbishop Emeritus Joseph Naumann, Archdiocese of Kansas City in Kansas</cite>
+            </div>
+            <div class="testimonial-card">
+              <blockquote>"For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect."</blockquote>
+              <cite>— Fr. Pat Rush, Former Pastor</cite>
+            </div>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <blockquote>"The coaching I received during my first year as principal was invaluable. Dr. Vince Cascone helped me navigate challenges I never could have anticipated."</blockquote>
-          <cite>— [Principal Name], [School Name]</cite>
-        </div>
-        <div class="testimonial-card">
-          <blockquote>"An inspiring speaker who combines deep faith, practical wisdom, and genuine care for Catholic school leaders. Our principals left energized and equipped."</blockquote>
-          <cite>— [Name], [Organization]</cite>
-        </div>
+        <button class="testimonial-arrow testimonial-arrow-right" aria-label="Next testimonial">&#8250;</button>
       </div>
+      <script>
+        (function() {
+          const track = document.querySelector('.testimonials-scroll-track');
+          const cards = track.querySelectorAll('.testimonial-card');
+          const totalReal = Math.floor(cards.length / 2);
+          let current = 0;
+
+          function goTo(index) {
+            current = ((index % totalReal) + totalReal) % totalReal;
+            track.style.animation = 'none';
+            track.style.transition = 'transform 0.6s ease-in-out';
+            track.style.transform = 'translateX(-' + (current * 25) + '%)';
+            clearTimeout(track._autoTimer);
+            track._autoTimer = setTimeout(resumeAuto, 20000);
+          }
+
+          function resumeAuto() {
+            track.style.transition = 'none';
+            track.style.transform = '';
+            track.style.animation = 'scroll-left 21s ease-in-out infinite';
+          }
+
+          document.querySelector('.testimonial-arrow-right').addEventListener('click', function() {
+            goTo(current + 1);
+          });
+
+          document.querySelector('.testimonial-arrow-left').addEventListener('click', function() {
+            goTo(current - 1);
+          });
+        })();
+      </script>
     </div>
   </section>
 
