@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="24" fill="#1a2744"/>
+  <text x="96" y="105" font-family="Georgia, serif" font-size="60" font-weight="bold" fill="#c9a84c" text-anchor="middle" dominant-baseline="middle">SES</text>
+  <line x1="45" y1="128" x2="147" y2="128" stroke="#c9a84c" stroke-width="2"/>
+</svg>

@@ -6,6 +6,13 @@
   <title>Seton Educational Services, LLC — Catholic School Leadership Consulting</title>
   <meta name="description" content="Expert consulting for Catholic school principals and diocesan school offices. Led by Dr. Vince Cascone, Ed.D., NAESP and NCEA National Distinguished Principal of the Year.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a2744">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Seton Ed">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 </head>
 <body>
 
@@ -371,5 +378,10 @@
     </div>
   </footer>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
