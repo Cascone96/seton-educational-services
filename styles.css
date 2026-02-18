@@ -446,7 +446,7 @@ section {
 
 .diocesan-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin-top: 30px;
 }
@@ -550,8 +550,8 @@ section {
 
 .testimonial-card blockquote {
   font-style: italic;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  line-height: 1.8;
   margin-bottom: 15px;
   color: rgba(255,255,255,0.9);
 }
