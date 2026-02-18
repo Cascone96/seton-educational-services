@@ -311,6 +311,10 @@
               <blockquote>"For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect."</blockquote>
               <cite>— Fr. Pat Rush, Former Pastor</cite>
             </div>
+            <div class="testimonial-card">
+              <blockquote>"What I appreciate about Vince is how he cultivates and maintains relationships and makes them a priority. This is a trait that successful leaders possess, and his clients will not only learn it from him but see it in action."</blockquote>
+              <cite>— Dr. Kathy O'Hara, Former Superintendent, Archdiocese of Kansas City in Kansas</cite>
+            </div>
             <!-- Duplicates for seamless loop -->
             <div class="testimonial-card">
               <blockquote>"Dr. Cascone served our archdiocese with distinction as the Superintendent of Schools, combining strong leadership with a deep commitment to the mission of Catholic education. Principals consistently relied on his wisdom, integrity, practical guidance and leadership skills. I am confident this consulting ministry will be a tremendous blessing to Catholic school leaders and the communities they serve."</blockquote>
@@ -319,6 +323,10 @@
             <div class="testimonial-card">
               <blockquote>"For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect."</blockquote>
               <cite>— Fr. Pat Rush, Former Pastor</cite>
+            </div>
+            <div class="testimonial-card">
+              <blockquote>"What I appreciate about Vince is how he cultivates and maintains relationships and makes them a priority. This is a trait that successful leaders possess, and his clients will not only learn it from him but see it in action."</blockquote>
+              <cite>— Dr. Kathy O'Hara, Former Superintendent, Archdiocese of Kansas City in Kansas</cite>
             </div>
           </div>
         </div>
@@ -335,7 +343,7 @@
             current = ((index % totalReal) + totalReal) % totalReal;
             track.style.animation = 'none';
             track.style.transition = 'transform 0.6s ease-in-out';
-            track.style.transform = 'translateX(-' + (current * 25) + '%)';
+            track.style.transform = 'translateX(-' + (current * (100/6)) + '%)';
             clearTimeout(track._autoTimer);
             track._autoTimer = setTimeout(resumeAuto, 20000);
           }
