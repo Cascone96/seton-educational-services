@@ -749,4 +749,37 @@ footer a:hover {
     margin-left: 0;
     margin-top: 10px;
   }
+
+  .credentials {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .diocesan-features {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 1rem;
+  }
+
+  .testimonial-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  .section-header {
+    margin-bottom: 35px;
+  }
 }
