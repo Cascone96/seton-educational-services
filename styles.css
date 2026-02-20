@@ -541,21 +541,24 @@ section {
 
 .testimonials-scroll-track {
   display: flex;
-  width: 600%;
-  animation: scroll-left 63s ease-in-out infinite;
+  width: 800%;
+  animation: scroll-left 84s ease-in-out infinite;
 }
 
 @keyframes scroll-left {
-  0%, 28% {
+  0%, 21% {
     transform: translateX(0);
   }
-  32%, 60% {
-    transform: translateX(-16.667%);
+  24%, 46% {
+    transform: translateX(-12.5%);
   }
-  64%, 92% {
-    transform: translateX(-33.333%);
+  49%, 71% {
+    transform: translateX(-25%);
   }
-  96%, 100% {
+  74%, 96% {
+    transform: translateX(-37.5%);
+  }
+  99%, 100% {
     transform: translateX(-50%);
   }
 }
@@ -565,7 +568,7 @@ section {
   padding: 30px;
   border-radius: 8px;
   border-left: 4px solid var(--gold);
-  width: 16.667%;
+  width: 12.5%;
   box-sizing: border-box;
 }
 
