@@ -6,7 +6,7 @@
 
 ---
 
-### FOUNDATION — $500/month
+### FOUNDATION — $450/month
 **Best for:** Experienced principals seeking periodic guidance and accountability
 
 | Feature | Included |
@@ -22,11 +22,11 @@
 | Strategic plan facilitation | No |
 | Minimum commitment | 3 months |
 
-**Investment:** $500/month ($1,500 minimum engagement)
+**Investment:** $450/month ($1,350 minimum engagement)
 
 ---
 
-### GROWTH — $1,200/month *(Most Popular)*
+### GROWTH — $750/month *(Most Popular)*
 **Best for:** New or transitioning principals who need comprehensive, ongoing support
 
 | Feature | Included |
@@ -43,11 +43,11 @@
 | Strategic plan facilitation | No |
 | Minimum commitment | 6 months |
 
-**Investment:** $1,200/month ($7,200 minimum engagement)
+**Investment:** $750/month ($4,500 minimum engagement)
 
 ---
 
-### TRANSFORMATIVE — $2,500/month
+### TRANSFORMATIVE — $1,500/month
 **Best for:** Principals leading school turnarounds, major transitions, or seeking elite-level growth
 
 | Feature | Included |
@@ -65,7 +65,7 @@
 | Crisis/urgent support | Yes |
 | Minimum commitment | 12 months |
 
-**Investment:** $2,500/month ($30,000 annual engagement)
+**Investment:** $1,500/month ($18,000 annual engagement)
 
 ---
 
