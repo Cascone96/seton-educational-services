@@ -431,32 +431,54 @@ section {
 
 /* ===== CONSEQUENCES SECTION ===== */
 #consequences {
-  background: var(--white);
+  background: var(--cream);
 }
 
 .consequences-group {
-  max-width: 960px;
-  margin: 0 auto 55px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 35px 35px 30px;
+  box-shadow: var(--shadow);
 }
 
 .consequences-group:last-child {
   margin-bottom: 0;
 }
 
-.consequences-group h3 {
-  color: var(--navy);
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--gold);
+.consequences-group-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--gold-light);
 }
 
-.consequence-label {
-  color: var(--maroon);
-  font-weight: 700;
+.consequences-group-icon {
+  font-size: 1.8rem;
+  width: 55px;
+  height: 55px;
+  background: var(--navy);
+  color: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.consequences-group-header h3 {
+  color: var(--navy);
+  font-size: 1.25rem;
+  margin-bottom: 3px;
+}
+
+.consequences-group-header p {
+  color: var(--gray-medium);
+  font-size: 0.95rem;
+  font-style: italic;
 }
 
 .consequence-cards {
@@ -468,24 +490,43 @@ section {
 .consequence-card {
   background: var(--gray-light);
   border-radius: 8px;
-  padding: 28px 25px;
-  border-left: 4px solid var(--maroon);
+  padding: 25px 22px;
+  text-align: center;
   transition: var(--transition);
+  border-bottom: 3px solid transparent;
 }
 
 .consequence-card:hover {
   box-shadow: var(--shadow);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  border-bottom-color: var(--maroon);
+}
+
+.consequence-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.consequence-card h4 {
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
 }
 
 .consequence-card p {
-  font-size: 0.95rem;
-  color: var(--gray-dark);
+  font-size: 0.9rem;
+  color: var(--gray-medium);
   line-height: 1.7;
-}
-
-.consequence-card p strong {
-  color: var(--navy);
 }
 
 /* ===== STAKES SECTION ===== */
@@ -1084,6 +1125,10 @@ footer a:hover {
   .pain-cards {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .consequences-group {
+    padding: 25px 20px;
   }
 
   .consequence-cards {
