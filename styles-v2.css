@@ -78,8 +78,20 @@ nav .container {
 }
 
 .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 100px;
+  width: auto;
+}
+
+.nav-brand-text {
   color: var(--gold);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -137,11 +149,17 @@ nav .container {
 
 .hero-eyebrow {
   font-family: Arial, sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: var(--gold);
   margin-bottom: 25px;
+  font-weight: 700;
+  background: rgba(201,168,76,0.15);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(201,168,76,0.3);
 }
 
 .hero h1 {
@@ -821,17 +839,20 @@ section {
 .testimonial-card {
   min-width: 100%;
   background: rgba(255,255,255,0.06);
-  padding: 40px 35px;
+  padding: 30px 35px;
   border-radius: 8px;
   border-left: 4px solid var(--gold);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonial-card blockquote {
   font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 15px;
   color: rgba(255,255,255,0.88);
 }
 
