@@ -95,7 +95,36 @@
   }
   </script>
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Vince Cascone",
+    "honorificSuffix": "Ed.D.",
+    "jobTitle": "Catholic School Leadership Consultant",
+    "description": "Founder of Seton Educational Services with 31 years in Catholic education, including 19 years as a principal and 7 years as a superintendent.",
+    "url": "https://setoned.org",
+    "image": "https://setoned.org/headshot.jpg",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Seton Educational Services, LLC",
+      "url": "https://setoned.org"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Benedictine College"
+    },
+    "award": [
+      "NAESP National Distinguished Principal",
+      "NCEA Distinguished Principal of the Year",
+      "U.S. Department of Education National Blue Ribbon School"
+    ],
+    "knowsAbout": ["Catholic school leadership", "Principal coaching", "School turnaround", "Strategic planning", "Catholic education", "Enrollment management"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.min.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a2744">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -109,7 +138,7 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-brand"><img src="icons/icon.svg" alt="Seton Educational Services, LLC" class="nav-logo"> <span class="nav-brand-text">Seton Educational Services, LLC</span></a>
+      <a href="#" class="nav-brand"><img src="icons/icon.svg" alt="Seton Educational Services, LLC" class="nav-logo" width="100" height="100"> <span class="nav-brand-text">Seton Educational Services, LLC</span></a>
       <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
       <div class="nav-links">
         <a href="#pain-points">The Reality</a>
@@ -200,7 +229,7 @@
   <section id="about">
     <div class="container">
       <div class="about-intro">
-        <img src="headshot.jpg" alt="Dr. Vince Cascone" class="headshot">
+        <img src="headshot.jpg" alt="Dr. Vince Cascone, Ed.D. — Catholic school leadership consultant, NAESP and NCEA Distinguished Principal of the Year" class="headshot" loading="lazy" width="600" height="750">
         <div class="about-text">
           <h2>There is a better way.</h2>
           <p>I'm Dr. Vince Cascone. I spent 19 years as a Catholic school principal and 7 years as a superintendent. I've been where you are. I understand the weight of leading a school community — and I've seen firsthand what becomes possible when principals have the right support.</p>

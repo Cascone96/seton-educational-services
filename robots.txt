@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /icons/
+Disallow: /*.css$
+Disallow: /*.js$
 
 Sitemap: https://setoned.org/sitemap.xml
