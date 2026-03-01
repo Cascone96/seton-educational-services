@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Seton Educational Services | Catholic School Leadership Insights</title>
+  <meta name="description" content="Expert insights on Catholic school leadership from Dr. Vince Cascone, Ed.D. Practical advice on principal coaching, school turnaround, Title II funding, mentoring, and building strong parish school partnerships.">
+  <meta name="keywords" content="Catholic school leadership blog, Catholic school principal advice, Catholic education insights, principal mentoring, Catholic school consulting blog">
+  <meta name="author" content="Dr. Vince Cascone, Ed.D.">
+  <link rel="canonical" href="https://setoned.org/blog/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog — Seton Educational Services | Catholic School Leadership Insights">
+  <meta property="og:description" content="Expert insights on Catholic school leadership from Dr. Vince Cascone, Ed.D. Practical advice for Catholic school principals and diocesan leaders.">
+  <meta property="og:url" content="https://setoned.org/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Seton Educational Services, LLC">
+  <meta property="og:image" content="https://setoned.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — Seton Educational Services | Catholic School Leadership Insights">
+  <meta name="twitter:description" content="Expert insights on Catholic school leadership from Dr. Vince Cascone, Ed.D.">
+  <meta name="twitter:image" content="https://setoned.org/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="../icons/icon.svg">
+  <meta name="theme-color" content="#1a2744">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --navy-dark: #111c33;
+      --gold: #c9a84c;
+      --gold-light: #e8d9a0;
+      --cream: #faf8f2;
+      --white: #ffffff;
+      --gray-dark: #333333;
+      --gray-medium: #666666;
+      --gray-light: #f5f5f5;
+      --maroon: #6b1d2a;
+      --shadow: 0 2px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 35px rgba(0,0,0,0.18);
+      --transition: all 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Georgia', 'Times New Roman', serif; color: var(--gray-dark); line-height: 1.7; background-color: var(--white); }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Georgia', serif; font-weight: 700; line-height: 1.3; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    nav { background: var(--navy); padding: 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo { height: 100px; width: auto; }
+    .nav-brand-text { color: var(--gold); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { color: var(--white); font-family: Arial, Helvetica, sans-serif; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; padding: 5px 0; border-bottom: 2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero */
+    .blog-hero { background: linear-gradient(135deg, var(--navy-dark) 0%, #2a3f6b 50%, var(--navy) 100%); color: var(--white); padding: 160px 20px 60px; text-align: center; }
+    .blog-hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .blog-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; }
+
+    /* Blog List */
+    .blog-list { padding: 60px 20px; background: var(--cream); }
+    .blog-list .container { max-width: 860px; }
+    .blog-card { background: var(--white); border-radius: 8px; padding: 35px 35px 30px; margin-bottom: 30px; box-shadow: var(--shadow); border-left: 4px solid var(--gold); transition: var(--transition); }
+    .blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .blog-card .post-date { font-family: Arial, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 10px; display: block; }
+    .blog-card h2 { font-size: 1.4rem; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
+    .blog-card h2 a { color: var(--navy); }
+    .blog-card h2 a:hover { color: var(--maroon); }
+    .blog-card p { color: var(--gray-medium); font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
+    .blog-card .read-more { font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); }
+    .blog-card .read-more:hover { color: var(--maroon); }
+
+    /* Footer */
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 35px 20px; font-family: Arial, sans-serif; font-size: 0.85rem; }
+    footer a { color: var(--gold); }
+    footer a:hover { color: var(--gold-light); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px; gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); }
+      .nav-links.active { display: flex; }
+      .nav-toggle { display: block; }
+      .blog-hero { padding: 140px 20px 50px; }
+      .blog-hero h1 { font-size: 1.8rem; }
+      .blog-card { padding: 25px 22px 22px; }
+      .blog-card h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container">
+      <a href="https://setoned.org/" class="nav-brand"><img src="../icons/icon.svg" alt="Seton Educational Services, LLC" class="nav-logo" width="100" height="100"> <span class="nav-brand-text">Seton Educational Services, LLC</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="https://setoned.org/#services">Services</a>
+        <a href="https://setoned.org/#speaking">Speaking</a>
+        <a href="https://setoned.org/#contact">Contact</a>
+        <a href="https://setoned.org/#testimonials">Testimonials</a>
+        <a href="./" class="active">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1>Catholic School Leadership Blog</h1>
+      <p>Practical insights, proven strategies, and faithful guidance for Catholic school principals and diocesan leaders.</p>
+    </div>
+  </section>
+
+  <!-- BLOG LIST -->
+  <section class="blog-list">
+    <div class="container">
+
+      <article class="blog-card">
+        <span class="post-date">February 28, 2026</span>
+        <h2><a href="5-things-every-new-catholic-school-principal-should-do.html">5 Things Every New Catholic School Principal Should Do</a></h2>
+        <p>Stepping into the role of Catholic school principal for the first time is both an extraordinary calling and an overwhelming challenge. After 31 years in Catholic education, here are the five things I wish every new principal knew from day one.</p>
+        <a href="5-things-every-new-catholic-school-principal-should-do.html" class="read-more">Read More &rarr;</a>
+      </article>
+
+      <article class="blog-card">
+        <span class="post-date">February 28, 2026</span>
+        <h2><a href="how-to-use-title-ii-funding-for-catholic-school-professional-development.html">How to Use Title II Funding for Catholic School Professional Development</a></h2>
+        <p>Many Catholic school leaders do not realize that federal funding is available to support their professional growth. Title II, Part A of the Every Student Succeeds Act provides equitable services funding that Catholic schools can access at no cost.</p>
+        <a href="how-to-use-title-ii-funding-for-catholic-school-professional-development.html" class="read-more">Read More &rarr;</a>
+      </article>
+
+      <article class="blog-card">
+        <span class="post-date">February 28, 2026</span>
+        <h2><a href="building-a-strong-pastor-principal-partnership.html">Building a Strong Pastor-Principal Partnership</a></h2>
+        <p>The pastor-principal relationship is one of the most unique and consequential dynamics in Catholic education. When it works well, the school thrives. When it falters, the effects ripple through the entire parish community.</p>
+        <a href="building-a-strong-pastor-principal-partnership.html" class="read-more">Read More &rarr;</a>
+      </article>
+
+      <article class="blog-card">
+        <span class="post-date">February 28, 2026</span>
+        <h2><a href="signs-your-catholic-school-needs-a-turnaround.html">Signs Your Catholic School Needs a Turnaround</a></h2>
+        <p>No one sets out to lead a struggling school. But the warning signs can be subtle, building gradually until the situation becomes critical. Recognizing these signs early is the difference between a school that recovers and one that closes.</p>
+        <a href="signs-your-catholic-school-needs-a-turnaround.html" class="read-more">Read More &rarr;</a>
+      </article>
+
+      <article class="blog-card">
+        <span class="post-date">February 28, 2026</span>
+        <h2><a href="why-catholic-school-principals-need-a-mentor.html">Why Catholic School Principals Need a Mentor</a></h2>
+        <p>The principalship can be one of the loneliest jobs in education. Unlike corporate leaders who typically have executive coaches and leadership teams, many Catholic school principals carry the weight of their role with no one to turn to for guidance.</p>
+        <a href="why-catholic-school-principals-need-a-mentor.html" class="read-more">Read More &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p style="font-style:italic; color:#c9a84c; margin-bottom:10px; font-size:0.95rem;">"Live simply so that others might simply live." — St. Elizabeth Ann Seton</p>
+      <p>&copy; 2026 Seton Educational Services, LLC. All rights reserved. | <a href="https://setoned.org/#contact">vcascone@setoned.org</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
