@@ -1120,6 +1120,94 @@ section {
   margin-top: 20px;
 }
 
+/* ===== DIOCESAN MENTORING CARD ===== */
+.diocesan-mentoring-card {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diocesan-mentoring-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.15);
+}
+
+.diocesan-mentoring-header {
+  padding: 30px 25px;
+  text-align: center;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 240px;
+}
+
+.diocesan-mentoring-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--gold);
+}
+
+.diocesan-mentoring-header .price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.diocesan-mentoring-body {
+  padding: 30px 30px;
+  flex: 1;
+}
+
+.diocesan-mentoring-body p {
+  font-size: 0.95rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.diocesan-mentoring-body ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 30px;
+  margin-bottom: 20px;
+}
+
+.diocesan-mentoring-body ul li {
+  position: relative;
+  padding-left: 25px;
+  font-size: 0.9rem;
+}
+
+.diocesan-mentoring-body ul li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .diocesan-mentoring-card {
+    flex-direction: column;
+  }
+
+  .diocesan-mentoring-header {
+    min-width: auto;
+  }
+
+  .diocesan-mentoring-body ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== SPEAKING SECTION ===== */
 #speaking {
   background: var(--white);
