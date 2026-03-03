@@ -1137,7 +1137,7 @@ section {
 }
 
 .diocesan-mentoring-header {
-  padding: 30px 25px 20px;
+  padding: 20px 25px 15px;
   text-align: center;
   background: var(--navy);
   color: var(--white);
@@ -1156,22 +1156,24 @@ section {
 }
 
 .diocesan-mentoring-body {
-  padding: 30px 30px;
-  flex: 1;
+  padding: 25px 30px;
+  text-align: center;
 }
 
 .diocesan-mentoring-body p {
   font-size: 0.95rem;
   color: var(--gray-medium);
   line-height: 1.7;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 .diocesan-mentoring-body ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 30px;
-  margin-bottom: 20px;
+  gap: 6px 30px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .diocesan-mentoring-body ul li {
