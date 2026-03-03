@@ -1128,7 +1128,6 @@ section {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  display: flex;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1138,14 +1137,10 @@ section {
 }
 
 .diocesan-mentoring-header {
-  padding: 30px 25px;
+  padding: 30px 25px 20px;
   text-align: center;
   background: var(--navy);
   color: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 240px;
 }
 
 .diocesan-mentoring-header h3 {
