@@ -1,4 +1,4 @@
-const CACHE_NAME = 'seton-ed-v16';
+const CACHE_NAME = 'seton-ed-v17';
 const ASSETS_TO_CACHE = [
   './',
   'index.html',
