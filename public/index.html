@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seton Educational Services — Leadership Coaching &amp; Consulting for School Leaders</title>
+  <meta name="description" content="Expert coaching, mentoring, and consulting for public school principals and district leaders. Founded by Dr. Vince Cascone, Ed.D. — NAESP National Distinguished Principal of the Year.">
+  <meta name="author" content="Dr. Vince Cascone, Ed.D.">
+
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --navy-light: #2a3f6b;
+      --gold: #c9a84c;
+      --gold-light: #e8d9a0;
+      --cream: #f9f7f2;
+      --white: #ffffff;
+      --text: #333333;
+      --text-light: #666666;
+      --shadow: 0 2px 20px rgba(26,39,68,0.08);
+      --shadow-hover: 0 6px 30px rgba(26,39,68,0.14);
+      --radius: 8px;
+      --transition: 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; }
+    a { color: var(--navy); text-decoration: none; }
+
+    /* ========== UTILITIES ========== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+    .section-padding { padding: 80px 0; }
+    .section-padding-sm { padding: 60px 0; }
+    .text-center { text-align: center; }
+    .accent-line { width: 60px; height: 3px; background: var(--gold); margin: 16px auto 20px; }
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      background: linear-gradient(180deg, #111c33 0, var(--navy) 100%);
+      padding: 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      border-bottom: 2px solid rgba(201,168,76,0.3);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .nav-brand {
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .nav-brand svg { width: 50px; height: 50px; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 2px;
+      position: relative;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; left: 0; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: #b8963f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--gold);
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-navy:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(26,39,68,0.3);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, #111c33 0%, #2a3f6b 50%, var(--navy) 100%);
+      color: var(--white);
+      padding: 120px 20px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 0, rgba(201,168,76,0.08) 0, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 25px;
+      font-weight: 700;
+      background: rgba(201,168,76,0.15);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 4px;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      color: var(--white);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.25;
+    }
+    .hero .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat-number {
+      font-size: 2.5rem;
+      color: var(--gold);
+      display: block;
+    }
+    .hero-stats .stat-label {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+    }
+
+    /* ========== CHALLENGE SECTION ========== */
+    .challenge { background: var(--cream); }
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+    }
+    .challenge-card {
+      background: var(--white);
+      padding: 35px 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 4px solid #6b1d2a;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .challenge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .challenge-icon {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      display: block;
+      color: #6b1d2a;
+    }
+    .challenge-card:hover {
+      border-top-color: var(--gold);
+    }
+    .challenge-card h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .challenge-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .service-card.full-width {
+      grid-column: 1 / -1;
+    }
+    .service-card-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 28px;
+    }
+    .service-card-header h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .service-card-header .service-tag {
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+    .service-card-body {
+      padding: 25px 28px;
+    }
+    .service-card-body ul {
+      list-style: none;
+      padding: 0;
+    }
+    .service-card-body li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .service-card-body li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .about-photo {
+      width: 280px;
+      height: 340px;
+      background: var(--navy-light);
+      border-radius: var(--radius);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+    .about h2 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .about h2 span { color: var(--gold); }
+    .about-text p {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 14px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .about-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .credential {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      color: var(--gold-light);
+    }
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-number {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.5px;
+    }
+    .quote-box {
+      background: rgba(201,168,76,0.1);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 25px 30px;
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.92);
+    }
+
+    /* ========== FUNDING ========== */
+    .funding { background: var(--cream); }
+    .funding-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 45px;
+      border-left: 5px solid var(--gold);
+    }
+    .funding-box h3 {
+      color: var(--navy);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .funding-box p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .funding-highlight {
+      background: rgba(201,168,76,0.1);
+      padding: 16px 22px;
+      border-radius: 4px;
+      font-weight: bold;
+      color: var(--navy);
+      margin-top: 10px;
+      font-size: 0.98rem;
+    }
+
+    /* ========== HOW IT WORKS ========== */
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+    .step-number {
+      display: inline-flex;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .step-card h3 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .step-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .step-connector {
+      display: none;
+    }
+
+    /* ========== TESTIMONIAL ========== */
+    .testimonial {
+      background: var(--cream);
+    }
+    .testimonial-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 45px;
+      text-align: center;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--navy);
+    }
+
+    /* ========== CONTACT / CTA ========== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cta-section .accent-line { margin-bottom: 30px; }
+    .contact-info {
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+    .contact-info p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 6px;
+    }
+    .contact-info a {
+      color: var(--gold);
+      transition: color var(--transition);
+    }
+    .contact-info a:hover { color: var(--gold-light); }
+    .newsletter-note {
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .newsletter-note strong { color: var(--gold); }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #111b2e;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold); }
+
+    /* ========== SECTION HEADERS ========== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section-header h2 {
+      color: var(--navy);
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+    .section-header p {
+      max-width: 650px;
+      margin: 10px auto 0;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .challenge-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-wrapper { grid-template-columns: 1fr; justify-items: center; }
+      .about-photo { width: 220px; height: 270px; }
+      .how-it-works-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 2.2rem; }
+      .about-stats { gap: 25px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .section-padding { padding: 60px 0; }
+      .hero { padding: 70px 0 60px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero .intro-text { font-size: 0.95rem; }
+      .hero-logo svg { max-width: 300px; }
+      .how-it-works-grid { grid-template-columns: 1fr; }
+      .about-stats { flex-direction: column; gap: 15px; }
+      .about-credentials { flex-direction: column; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px 30px; gap: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+      .nav-links.active { display: flex; }
+      .nav-toggle { display: block; }
+      .nav-brand { font-size: 0.9rem; }
+      .funding-box { padding: 30px 25px; }
+      .testimonial-card { padding: 30px 25px; }
+    }
+
+    /* ========== PRINT ========== */
+    @media print {
+      nav { display: none; }
+      .hero { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 40px 0; }
+      .btn { border: 1px solid var(--navy); }
+      .section-padding { padding: 40px 0; }
+      .service-card, .challenge-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+      .about { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="44" height="44">
+          <defs>
+            <linearGradient id="navNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a2744"/>
+              <stop offset="100%" style="stop-color:#2a3f6b"/>
+            </linearGradient>
+          </defs>
+          <path d="M30,15 L120,15 L120,105 Q75,155 30,105 Z" fill="url(#navNavy)" stroke="#c9a84c" stroke-width="4"/>
+          <path d="M72,30 L72,50 L67,50 L67,62 L72,62 L72,120 L78,120 L78,62 L83,62 L83,50 L78,50 L78,30 Z" fill="#c9a84c"/>
+          <path d="M45,52 L67,52 L67,48 L83,48 L83,52 L105,52 L105,60 L83,60 L83,64 L67,64 L67,60 L45,60 Z" fill="#c9a84c"/>
+          <circle cx="75" cy="27" r="4" fill="#c9a84c"/>
+          <circle cx="75" cy="122" r="4" fill="#c9a84c"/>
+          <circle cx="43" cy="56" r="4" fill="#c9a84c"/>
+          <circle cx="107" cy="56" r="4" fill="#c9a84c"/>
+          <circle cx="75" cy="56" r="5" fill="#1a2744" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="75" cy="56" r="2.5" fill="#e8d9a0"/>
+        </svg>
+        Seton Educational Services
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="#pain-points">The Reality</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#funding">Funding</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+          <defs>
+            <linearGradient id="heroNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a2744"/>
+              <stop offset="100%" style="stop-color:#2a3f6b"/>
+            </linearGradient>
+            <radialGradient id="heroGlowGrad" cx="50%" cy="40%" r="50%">
+              <stop offset="0%" style="stop-color:#e8d9a0; stop-opacity:0.2"/>
+              <stop offset="60%" style="stop-color:#c9a84c; stop-opacity:0.06"/>
+              <stop offset="100%" style="stop-color:#1a2744; stop-opacity:0"/>
+            </radialGradient>
+            <clipPath id="heroShieldClip">
+              <path d="M40,25 L110,25 L110,95 Q75,135 40,95 Z"/>
+            </clipPath>
+          </defs>
+          <g transform="translate(0,5)">
+            <path d="M40,20 L110,20 L110,90 Q75,130 40,90 Z" fill="url(#heroNavyGrad)" stroke="#c9a84c" stroke-width="3"/>
+            <g clip-path="url(#heroShieldClip)">
+              <ellipse cx="75" cy="55" rx="40" ry="45" fill="url(#heroGlowGrad)"/>
+              <line x1="75" y1="55" x2="75" y2="18" stroke="#e8d9a0" stroke-width="2" opacity="0.5"/>
+              <line x1="75" y1="55" x2="55" y2="22" stroke="#e8d9a0" stroke-width="1.5" opacity="0.4"/>
+              <line x1="75" y1="55" x2="95" y2="22" stroke="#e8d9a0" stroke-width="1.5" opacity="0.4"/>
+              <line x1="75" y1="55" x2="42" y2="30" stroke="#e8d9a0" stroke-width="1.5" opacity="0.3"/>
+              <line x1="75" y1="55" x2="108" y2="30" stroke="#e8d9a0" stroke-width="1.5" opacity="0.3"/>
+              <line x1="75" y1="55" x2="35" y2="42" stroke="#e8d9a0" stroke-width="1" opacity="0.25"/>
+              <line x1="75" y1="55" x2="115" y2="42" stroke="#e8d9a0" stroke-width="1" opacity="0.25"/>
+            </g>
+            <path d="M44,24 L106,24 L106,88 Q75,124 44,88 Z" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.25"/>
+            <path d="M72,35 L72,50 L69,50 L69,60 L72,60 L72,105 L78,105 L78,60 L81,60 L81,50 L78,50 L78,35 Z" fill="#c9a84c"/>
+            <path d="M52,52 L69,52 L69,49 L81,49 L81,52 L98,52 L98,58 L81,58 L81,61 L69,61 L69,58 L52,58 Z" fill="#c9a84c"/>
+            <circle cx="75" cy="33" r="3.5" fill="#c9a84c"/>
+            <circle cx="75" cy="107" r="3.5" fill="#c9a84c"/>
+            <circle cx="50" cy="55" r="3.5" fill="#c9a84c"/>
+            <circle cx="100" cy="55" r="3.5" fill="#c9a84c"/>
+            <circle cx="75" cy="55" r="4" fill="#1a2744" stroke="#c9a84c" stroke-width="1.2"/>
+            <circle cx="75" cy="55" r="2" fill="#e8d9a0"/>
+            <path d="M73,35 L73,50 L70,50 L70,52" fill="none" stroke="#e8d9a0" stroke-width="0.6" opacity="0.5"/>
+            <path d="M53,53 L69,53" fill="none" stroke="#e8d9a0" stroke-width="0.6" opacity="0.5"/>
+            <path d="M40,20 L110,20 L110,90 Q75,130 40,90 Z" fill="none" stroke="#c9a84c" stroke-width="3"/>
+          </g>
+          <text x="135" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="bold" fill="#ffffff" letter-spacing="1">SETON</text>
+          <line x1="135" y1="70" x2="340" y2="70" stroke="#c9a84c" stroke-width="2"/>
+          <text x="135" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="rgba(255,255,255,0.85)" letter-spacing="3">EDUCATIONAL SERVICES</text>
+          <text x="135" y="115" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#c9a84c" letter-spacing="2" font-style="italic">Leadership Coaching &amp; Consulting</text>
+        </svg>
+      </div>
+      <p class="hero-eyebrow">For School Principals &amp; District Leaders</p>
+      <h1>You were called to lead.<br>But no one prepared you for this.</h1>
+      <p class="subtitle">School principals carry an extraordinary weight &mdash; academics, operations, people, budgets, culture &mdash; often with little training and no one in their corner. If that sounds familiar, you're not alone. And it doesn't have to stay this way.</p>
+      <div class="hero-stats">
+        <div><span class="stat-number">31</span><span class="stat-label">Years in Education</span></div>
+        <div><span class="stat-number">19</span><span class="stat-label">Years as Principal</span></div>
+        <div><span class="stat-number">7</span><span class="stat-label">Years as Superintendent</span></div>
+      </div>
+      <a href="#contact" class="btn btn-primary">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- ==================== PAIN POINTS ==================== -->
+  <section id="pain-points" style="background: var(--cream); padding: 60px 20px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Reality Many Principals Face</h2>
+        <div class="accent-line"></div>
+        <p>Challenges that too many school leaders navigate without the support they deserve</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+        <div style="background: var(--white); border-radius: 8px; padding: 40px 30px 35px; box-shadow: var(--shadow); border-top: 4px solid #6b1d2a; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="font-size: 2.2rem; margin-bottom: 18px; color: #6b1d2a;">&#9888;</div>
+          <h3 style="color: var(--navy); font-size: 1.25rem; margin-bottom: 15px;">Thrown Into the Deep End</h3>
+          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.7;">Many new principals step into the role with passion but without the preparation the job demands. Early missteps can strain relationships, days are spent in crisis mode, and confidence stalls before it has a chance to build.</p>
+        </div>
+        <div style="background: var(--white); border-radius: 8px; padding: 40px 30px 35px; box-shadow: var(--shadow); border-top: 4px solid #6b1d2a; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="font-size: 2.2rem; margin-bottom: 18px; color: #6b1d2a;">&#9878;</div>
+          <h3 style="color: var(--navy); font-size: 1.25rem; margin-bottom: 15px;">Wearing Every Hat</h3>
+          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.7;">Principal. Instructional leader. HR director. Facilities manager. Budget officer. Community liaison. The list never ends. Without a team to share the load, leadership turnover rises and the mission quietly gets pushed aside.</p>
+        </div>
+        <div style="background: var(--white); border-radius: 8px; padding: 40px 30px 35px; box-shadow: var(--shadow); border-top: 4px solid #6b1d2a; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="font-size: 2.2rem; margin-bottom: 18px; color: #6b1d2a;">&#9872;</div>
+          <h3 style="color: var(--navy); font-size: 1.25rem; margin-bottom: 15px;">Leading Alone</h3>
+          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.7;">Without a thought partner, principals carry difficult decisions by themselves. Blind spots grow, schools plateau, and the emotional and professional toll becomes unsustainable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT'S AT STAKE ==================== -->
+  <section style="background: linear-gradient(135deg, var(--navy) 0%, #111c33 100%); color: var(--white); padding: 60px 20px; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.06) 0%, transparent 60%); pointer-events: none;"></div>
+    <div class="container" style="position: relative;">
+      <div class="section-header">
+        <h2 style="color: var(--white);">What's Really at Stake</h2>
+        <div class="accent-line"></div>
+        <p style="color: rgba(255,255,255,0.65);">When principals struggle without support, the impact extends far beyond one school</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 40px 30px; border-top: 4px solid var(--gold); text-align: center;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: var(--navy); font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;">1</div>
+          <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 12px;">Teacher Retention Suffers</h3>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7;">When principals struggle, teachers feel it first. Unsupported leaders create unsupported teams — and good teachers leave for buildings with stronger leadership.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 40px 30px; border-top: 4px solid var(--gold); text-align: center;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: var(--navy); font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;">2</div>
+          <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 12px;">School Culture Erodes</h3>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7;">A revolving door of principals signals instability. Community confidence drops, parent engagement declines, and rebuilding trust takes years.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 40px 30px; border-top: 4px solid var(--gold); text-align: center;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: var(--navy); font-family: Arial, sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;">3</div>
+          <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 12px;">Students Are Affected</h3>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7;">When principals don't have what they need to succeed, it's the students who feel it most — in the quality of their education and their daily experience at school.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" style="padding: 60px 20px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>How We Can Help</h2>
+        <div class="accent-line"></div>
+        <p>Tailored consulting for individual principals and district leadership offices</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; align-items: stretch;">
+
+        <!-- New Principal Coaching -->
+        <div style="background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;">
+          <div style="padding: 30px 25px 20px; text-align: center; background: var(--navy); color: var(--white);">
+            <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--gold);">New Principal Coaching</h3>
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--white);"><a href="#contact" style="color: inherit;">Contact for Quote</a></div>
+          </div>
+          <div style="padding: 30px 25px; flex: 1; display: flex; flex-direction: column;">
+            <ul style="flex: 1; list-style: none; padding: 0;">
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Two coaching sessions per month</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>90-day entry plan development</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Stakeholder relationship guidance</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>First-year leadership toolkit</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>On-call support between sessions</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>School culture assessment</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Teacher observation and evaluation coaching</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Crisis management preparation</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>End-of-year reflection and goal setting</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Access to monthly principal cohort meetings</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Leadership Development -->
+        <div style="background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;">
+          <div style="padding: 30px 25px 20px; text-align: center; background: var(--navy); color: var(--white);">
+            <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--gold);">Leadership Development</h3>
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--white);"><a href="#contact" style="color: inherit;">Contact for Quote</a></div>
+          </div>
+          <div style="padding: 30px 25px; flex: 1; display: flex; flex-direction: column;">
+            <ul style="flex: 1; list-style: none; padding: 0;">
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Two coaching sessions per month</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Strategic planning facilitation</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Leadership style assessment</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>School culture improvement strategies</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>School board partnership development</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Teacher recruitment and retention strategies</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Data-driven decision making</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Enrollment growth planning</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Board relations and communication</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Annual leadership growth plan with measurable goals</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
+          </div>
+        </div>
+
+        <!-- School Turnaround Support -->
+        <div style="background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;">
+          <div style="padding: 30px 25px 20px; text-align: center; background: var(--navy); color: var(--white);">
+            <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--gold);">School Turnaround Support</h3>
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--white);"><a href="#contact" style="color: inherit;">Contact for Quote</a></div>
+          </div>
+          <div style="padding: 30px 25px; flex: 1; display: flex; flex-direction: column;">
+            <ul style="flex: 1; list-style: none; padding: 0;">
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Comprehensive school assessment</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Administrator improvement plan</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Leadership transition support</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Staff morale and culture rebuilding</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Stakeholder conflict resolution</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Communication and crisis management</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Financial sustainability planning</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Enrollment stabilization strategies</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Parent and community re-engagement</li>
+              <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Accountability benchmarks and progress monitoring</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- District Mentoring Programs — full-width card -->
+      <div style="max-width: 750px; margin: 30px auto 0; background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow);">
+        <div style="padding: 15px 25px 10px; text-align: center; background: var(--navy); color: var(--white);">
+          <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--gold);">District Mentoring Programs</h3>
+          <div style="font-size: 0.9rem; font-weight: 700; color: var(--white);"><a href="#contact" style="color: inherit;">Contact for Quote</a></div>
+        </div>
+        <div style="padding: 20px 25px; text-align: center;">
+          <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 10px; text-align: left;">Already have a principal mentoring program that isn't meeting your needs? Let Seton Educational Services become your complete principal mentoring solution. All of our consulting services can be tailored to serve as your district's entire principal mentoring program &mdash; replacing or restructuring what isn't working.</p>
+          <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 25px; margin-bottom: 12px; text-align: left; list-style: none; padding: 0;">
+            <li style="position: relative; padding-left: 25px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Full replacement or redesign of existing programs</li>
+            <li style="position: relative; padding-left: 25px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Turnkey mentoring program for your district</li>
+            <li style="position: relative; padding-left: 25px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>All individual coaching services included</li>
+            <li style="position: relative; padding-left: 25px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Ongoing support, evaluation, and refinement</li>
+            <li style="position: relative; padding-left: 25px; font-size: 0.9rem;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">&#10003;</span>Customized to your district's unique needs</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+
+      <div style="background:#faf3dc; border-left:4px solid #c9a84c; padding:22px 28px; margin-top:35px; border-radius:6px; max-width:800px; margin-left:auto; margin-right:auto; text-align:center;">
+        <p style="margin:0; color:#1a2744; font-size:1.15rem; font-weight:600;">
+          District contracts are customized based on scope and scale. <a href="#contact" style="color:#6b1d2a; font-weight:700;">Contact me</a> for a tailored proposal.
+        </p>
+        <p style="margin:8px 0 0; color:#666; font-size:0.9rem;">Travel costs for on-site visits are billed separately.</p>
+      </div>
+      <p style="text-align:center; margin-top:15px; color:#666; font-size:0.95rem;">
+        These packages represent just a starting point. Whether you need a keynote speaker, a workshop for principals, a strategic planning facilitator, or something else entirely &mdash; I can tailor a program to meet your specific needs. <a href="#contact" style="color:#c9a84c;">Let's talk about what you're looking for.</a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT DR. CASCONE ==================== -->
+  <section id="about" class="about section-padding">
+    <div class="container">
+      <div class="about-wrapper">
+        <img src="../headshot.jpg" alt="Dr. Vince Cascone, Ed.D. — school leadership consultant, NAESP National Distinguished Principal of the Year" style="width:280px; height:340px; object-fit:cover; border-radius:var(--radius); border:3px solid var(--gold);">
+        <div class="about-text">
+          <h2>About <span>Dr. Vince Cascone</span></h2>
+          <p>With 31 years of experience in education &mdash; including 5 years as a teacher, 19 years as a principal, and 7 years as a superintendent &mdash; Dr. Cascone brings deep, practical expertise to every engagement. He has lived the challenges school leaders face every day, and he brings that perspective to his coaching and consulting work.</p>
+          <div class="about-credentials">
+            <span class="credential">NAESP National Distinguished Principal of the Year</span>
+            <span class="credential">U.S. Dept. of Education National Blue Ribbon School Leader</span>
+            <span class="credential">Ed.D. in Educational Leadership</span>
+            <span class="credential">Adjunct Professor, School Leadership &mdash; Benedictine College</span>
+            <span class="credential">Author: <em>No Principal Should Lead Alone</em></span>
+          </div>
+          <div class="about-stats">
+            <div>
+              <span class="stat-number">31</span>
+              <span class="stat-label">Years in Education</span>
+            </div>
+            <div>
+              <span class="stat-number">19</span>
+              <span class="stat-label">Years as Principal</span>
+            </div>
+            <div>
+              <span class="stat-number">7</span>
+              <span class="stat-label">Years as Superintendent</span>
+            </div>
+          </div>
+          <div class="quote-box">
+            &ldquo;I've been in the chair. I know what it's like to close the office door at the end of a long day and wonder if you're getting it right. That's why I do this work &mdash; so no principal has to figure it out alone.&rdquo;
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FUNDING ==================== -->
+  <section id="funding" class="funding section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>Funding Your Investment</h2>
+        <div class="accent-line"></div>
+      </div>
+      <div class="funding-box">
+        <h3>Title II, Part A (ESSA) Funding</h3>
+        <p>Title II, Part A of the Every Student Succeeds Act (ESSA) provides federal funding to support effective instruction and leadership in schools. Principal coaching, mentoring, and leadership development are specifically identified as allowable uses of these funds.</p>
+        <p>Your district already receives Title II-A funding. These dollars can be directed toward structured coaching and professional development for school leaders &mdash; meaning high-quality support may be available at little or no additional cost to your district.</p>
+        <div class="funding-highlight">Seton Educational Services can help your district navigate Title II-A funding to support this program at little or no additional cost.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <div class="accent-line"></div>
+        <p>A straightforward process designed to get you the right support, fast</p>
+      </div>
+      <div class="how-it-works-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Discovery Call</h3>
+          <p>A free 30-minute consultation to understand your situation, goals, and challenges.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Needs Assessment</h3>
+          <p>A tailored assessment of your school or district's leadership development needs.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Custom Program Design</h3>
+          <p>A coaching and consulting plan built specifically around your assessment results.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Coaching Begins</h3>
+          <p>Ongoing support, regular check-ins, and progress tracking from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL ==================== -->
+  <section class="testimonial section-padding-sm">
+    <div class="container">
+      <div class="testimonial-card">
+        <p>&ldquo;The best investment a district can make is in the leaders who shape everything else.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT / CTA ==================== -->
+  <section id="contact" class="cta-section section-padding">
+    <div class="container">
+      <h2>Ready to Invest in Your Leaders?</h2>
+      <div class="accent-line"></div>
+      <div class="contact-info">
+        <p><strong style="color: var(--gold);">Dr. Vince Cascone, Ed.D.</strong></p>
+        <p><a href="mailto:vcascone@setoned.org">vcascone@setoned.org</a></p>
+        <p><a href="https://setoned.org" target="_blank" rel="noopener">setoned.org</a></p>
+      </div>
+      <a href="mailto:vcascone@setoned.org?subject=Discovery%20Call%20Request" class="btn btn-primary">Schedule a Discovery Call</a>
+      <div class="newsletter-note">
+        <p>Subscribe to <strong>Servant Leader Monday</strong> &mdash; one actionable leadership insight delivered every Monday morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <p>Seton Educational Services, LLC &nbsp;&bull;&nbsp; <a href="https://setoned.org">setoned.org</a></p>
+      <p style="margin-top: 6px;">&copy; 2026 Seton Educational Services, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
