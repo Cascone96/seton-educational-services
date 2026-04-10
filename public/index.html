@@ -971,18 +971,55 @@
   </section>
 
   <!-- ==================== CONTACT / CTA ==================== -->
-  <section id="contact" class="cta-section section-padding">
+  <section id="contact" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 80px 0;">
     <div class="container">
-      <h2>Ready to Invest in Your Leaders?</h2>
-      <div class="accent-line"></div>
-      <div class="contact-info">
-        <p><strong style="color: var(--gold);">Dr. Vince Cascone, Ed.D.</strong></p>
-        <p><a href="mailto:vcascone@setoned.org">vcascone@setoned.org</a></p>
-        <p><a href="https://setoned.org" target="_blank" rel="noopener">setoned.org</a></p>
+      <div class="section-header">
+        <h2 style="color: var(--white);">Let's Connect</h2>
+        <div class="accent-line"></div>
+        <p style="color: rgba(255,255,255,0.75);">Schedule a free 30-minute discovery call to discuss how I can support you. Whether you're looking for coaching, a keynote speaker, professional development workshops, strategic planning, or something unique to your situation &mdash; I'm here to help.</p>
       </div>
-      <a href="mailto:vcascone@setoned.org?subject=Discovery%20Call%20Request" class="btn btn-primary">Schedule a Discovery Call</a>
-      <div class="newsletter-note">
-        <p>Subscribe to <strong>Servant Leader Monday</strong> &mdash; one actionable leadership insight delivered every Monday morning.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 40px auto 0; align-items: start;">
+        <div>
+          <h3 style="color: var(--gold); font-size: 1.3rem; margin-bottom: 12px;">Dr. Vince Cascone, Ed.D.</h3>
+          <p style="color: rgba(255,255,255,0.85);">School Leadership Consultant</p>
+          <div style="margin-top: 16px;">
+            <p style="color: rgba(255,255,255,0.85); margin-bottom: 6px;"><strong style="color: var(--gold);">Email:</strong> vcascone@setoned.org</p>
+            <p style="color: rgba(255,255,255,0.85); margin-bottom: 6px;"><strong style="color: var(--gold);">Phone:</strong> (816) 695-8817</p>
+          </div>
+          <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.6);">Available for engagements nationwide. Virtual and in-person consulting options.</p>
+        </div>
+        <form action="https://formspree.io/f/mnjbzzda" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
+          <input type="hidden" name="_subject" value="Public School Discovery Call Request">
+          <input type="hidden" name="form_type" value="public-school-contact">
+          <div>
+            <label for="name" style="display: block; font-size: 0.85rem; color: var(--gold); margin-bottom: 4px; font-weight: bold;">Name</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px 14px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem;">
+          </div>
+          <div>
+            <label for="email" style="display: block; font-size: 0.85rem; color: var(--gold); margin-bottom: 4px; font-weight: bold;">Email</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px 14px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem;">
+          </div>
+          <div>
+            <label for="role" style="display: block; font-size: 0.85rem; color: var(--gold); margin-bottom: 4px; font-weight: bold;">Your Role</label>
+            <select id="role" name="role" style="width: 100%; padding: 10px 14px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem;">
+              <option value="">Select your role...</option>
+              <option value="principal">Principal</option>
+              <option value="assistant-principal">Assistant Principal</option>
+              <option value="superintendent">Superintendent</option>
+              <option value="district-office">District Office Staff</option>
+              <option value="school-board">School Board Member</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" style="display: block; font-size: 0.85rem; color: var(--gold); margin-bottom: 4px; font-weight: bold;">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your needs..." rows="4" style="width: 100%; padding: 10px 14px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; resize: vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+        </form>
+      </div>
+      <div style="margin-top: 40px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.15); text-align: center;">
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75);">Subscribe to <strong style="color: var(--gold);">Servant Leader Monday</strong> &mdash; one actionable leadership insight delivered every Monday morning.</p>
       </div>
     </div>
   </section>
