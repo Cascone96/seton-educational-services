@@ -174,7 +174,1234 @@
   }
   </script>
 
-  <link rel="stylesheet" href="styles.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --navy:        #1a2744;
+      --navy-dark:   #111c33;
+      --gold:        #c9a84c;
+      --gold-bright: #e8c84a;
+      --maroon:      #6b1d2a;
+      --cream:       #faf6ec;
+      --ink:         #2c2416;
+      --linen:       #e4d6ba;
+      --linen-dark:  #ddd0b3;
+      --parchment:   #faf6ec;
+      --white:       #ffffff;
+
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-serif:   'Cormorant Garamond', 'Georgia', serif;
+      --font-sans:    'Inter', system-ui, sans-serif;
+
+      --radius-card: 10px;
+      --shadow-card: 0 2px 12px rgba(74, 58, 32, .08);
+      --transition:  0.3s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      background-color: var(--linen);
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: var(--maroon); text-decoration: none; }
+    a:hover { color: var(--gold); }
+
+    ul { list-style: none; }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 80px 0; }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+    h3 { font-size: 1.2rem; font-weight: 500; }
+
+    p { font-family: var(--font-serif); font-size: 1.05rem; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding: 13px 28px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-dark);
+      color: var(--gold-bright);
+      transform: translateY(-1px);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-bright);
+      color: var(--navy);
+    }
+
+    /* ============================================================
+       ACCENT LINE
+    ============================================================ */
+    .accent-line {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 16px auto 24px;
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       SECTION HEADER
+    ============================================================ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #5a4a32;
+      font-size: 1.08rem;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--navy-dark);
+      border-bottom: 2px solid rgba(201, 168, 76, .4);
+      transition: padding var(--transition);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      max-width: none;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo {
+      height: 60px;
+      width: auto;
+      transition: height var(--transition);
+    }
+
+    .nav-brand-text {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--gold);
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-links .nav-portal {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .nav-links .nav-portal:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Shrunk nav on scroll */
+    nav.scrolled .container {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    nav.scrolled .nav-logo { height: 42px; }
+
+    nav.scrolled .nav-brand-text { font-size: 0.88rem; }
+
+    /* Hamburger toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 140px 0 100px;
+      text-align: center;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .hero .subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       PAIN POINTS SECTION
+    ============================================================ */
+    #pain-points {
+      background: var(--linen);
+    }
+
+    .pain-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .pain-card {
+      background: var(--parchment);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 36px 28px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      will-change: transform;
+    }
+
+    .pain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(74, 58, 32, .14);
+    }
+
+    .pain-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .pain-card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .pain-card p {
+      color: #4a3c28;
+      font-size: 1rem;
+    }
+
+    /* ============================================================
+       STAKES SECTION
+    ============================================================ */
+    #stakes {
+      background: var(--linen-dark);
+    }
+
+    .stakes-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .stake-card {
+      background: var(--parchment);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform var(--transition);
+    }
+
+    .stake-card:hover { transform: translateY(-4px); }
+
+    .stake-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 auto 18px;
+    }
+
+    .stake-card h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .stake-card p {
+      color: #4a3c28;
+      font-size: 1rem;
+    }
+
+    /* ============================================================
+       ABOUT SECTION
+    ============================================================ */
+    #about {
+      background: var(--linen);
+    }
+
+    .about-intro {
+      display: flex;
+      gap: 56px;
+      align-items: flex-start;
+    }
+
+    .headshot {
+      width: 320px;
+      height: 460px;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border-radius: var(--radius-card);
+      box-shadow: 0 4px 20px rgba(74, 58, 32, .18);
+    }
+
+    .about-text h2 {
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #3a2e1e;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .about-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.18rem !important;
+      color: var(--navy) !important;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin: 24px 0 !important;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .stat-label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7a6848;
+      margin-top: 6px;
+    }
+
+    /* ============================================================
+       NAMESAKE SECTION
+    ============================================================ */
+    #namesake {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    #namesake .section-header h2 {
+      color: var(--white);
+    }
+
+    #namesake .accent-line {
+      background: var(--gold);
+    }
+
+    .namesake-body {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .namesake-body p {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ============================================================
+       SERVICES SECTION
+    ============================================================ */
+    #services {
+      background: var(--linen);
+    }
+
+    .funding-notice {
+      background: #faf3dc;
+      border-left: 4px solid var(--gold);
+      padding: 20px 25px;
+      margin-bottom: 36px;
+      border-radius: 4px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .funding-notice p {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .funding-notice a { color: var(--maroon); font-weight: 600; }
+    .funding-notice a:hover { color: var(--gold); }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .package-card {
+      background: var(--parchment);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+      will-change: transform;
+    }
+
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(74, 58, 32, .14);
+    }
+
+    .package-header {
+      background: var(--navy);
+      padding: 24px 24px 20px;
+      text-align: center;
+    }
+
+    .package-header h3 {
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .price a { color: inherit; }
+
+    .package-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-body ul {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .package-body ul li {
+      font-family: var(--font-serif);
+      font-size: 0.97rem;
+      color: #3a2e1e;
+      padding: 6px 0 6px 20px;
+      border-bottom: 1px solid rgba(201, 168, 76, .15);
+      position: relative;
+    }
+
+    .package-body ul li::before {
+      content: '›';
+      position: absolute;
+      left: 4px;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* Diocesan mentoring card */
+    .diocesan-mentoring-card {
+      background: var(--parchment);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .diocesan-mentoring-header {
+      background: var(--navy);
+      padding: 24px 32px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .diocesan-mentoring-header h3 {
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .diocesan-mentoring-body {
+      padding: 28px 32px;
+    }
+
+    .diocesan-mentoring-body p {
+      color: #3a2e1e;
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .diocesan-mentoring-body ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 24px;
+      margin-bottom: 24px;
+    }
+
+    .diocesan-mentoring-body ul li {
+      font-family: var(--font-serif);
+      font-size: 0.97rem;
+      color: #3a2e1e;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .diocesan-mentoring-body ul li::before {
+      content: '›';
+      position: absolute;
+      left: 2px;
+      color: var(--gold);
+    }
+
+    /* Diocesan note and charter offer */
+    .diocesan-note {
+      background: #faf3dc;
+      border-left: 4px solid var(--gold);
+      padding: 22px 28px;
+      margin-top: 35px;
+      border-radius: 6px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .diocesan-note p { margin: 0; color: var(--navy); font-size: 1.08rem; font-weight: 500; }
+    .diocesan-note p + p { margin: 8px 0 0; color: #666; font-size: 0.9rem; font-weight: 400; }
+    .diocesan-note a { color: var(--maroon); font-weight: 700; }
+
+    .services-cta-note {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      font-size: 0.95rem;
+      font-family: var(--font-serif);
+    }
+
+    .services-cta-note a { color: var(--gold); }
+
+    .charter-offer {
+      background: var(--navy);
+      padding: 25px 30px;
+      margin-top: 30px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      border: 2px solid var(--gold);
+    }
+
+    .charter-offer .charter-label {
+      display: block;
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 10px;
+    }
+
+    .charter-offer p {
+      color: var(--white);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .charter-offer p:last-of-type {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .charter-offer .btn-charter {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 30px;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      transition: background var(--transition);
+    }
+
+    .charter-offer .btn-charter:hover { background: var(--gold-bright); }
+
+    /* ============================================================
+       SPEAKING SECTION
+    ============================================================ */
+    #speaking {
+      background: var(--parchment);
+    }
+
+    .topics-list {
+      max-width: 750px;
+      margin: 0 auto 32px;
+      list-style: none;
+    }
+
+    .topics-list li {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: #3a2e1e;
+      padding: 14px 18px 14px 36px;
+      position: relative;
+      border-bottom: 1px solid rgba(201, 168, 76, .22);
+    }
+
+    .topics-list li:last-child { border-bottom: none; }
+
+    .topics-list li::before {
+      content: '›';
+      position: absolute;
+      left: 12px;
+      top: 14px;
+      color: var(--gold);
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    #speaking .section-header + p,
+    #speaking > .container > p {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    #contact {
+      background: var(--linen);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 56px;
+      align-items: flex-start;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .contact-info > p {
+      font-family: var(--font-serif);
+      color: #5a4a32;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail {
+      margin-bottom: 10px;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: #3a2e1e;
+    }
+
+    .contact-detail strong {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7a6848;
+      margin-right: 6px;
+    }
+
+    .contact-info .contact-note {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form label {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #5a4a32;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--parchment);
+      border: 1.5px solid rgba(120, 98, 64, .4);
+      border-radius: 4px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, .15);
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* ============================================================
+       TESTIMONIALS SECTION
+    ============================================================ */
+    #testimonials {
+      background: var(--navy);
+    }
+
+    #testimonials .section-header h2 {
+      color: var(--white);
+    }
+
+    #testimonials .section-header p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    #testimonials .accent-line {
+      background: var(--gold);
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testimonials-viewport {
+      overflow: hidden;
+      flex: 1;
+      border-radius: var(--radius-card);
+    }
+
+    .testimonials-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      padding: 40px 48px;
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 20px;
+      quotes: "\201C" "\201D";
+    }
+
+    .testimonial-card blockquote::before { content: open-quote; }
+    .testimonial-card blockquote::after  { content: close-quote; }
+
+    .testimonial-card cite {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .testimonial-arrow {
+      background: rgba(255, 255, 255, .08);
+      border: 1.5px solid rgba(201, 168, 76, .4);
+      color: var(--gold);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .testimonial-arrow:hover {
+      background: rgba(201, 168, 76, .15);
+      border-color: var(--gold);
+    }
+
+    /* ============================================================
+       NEWSLETTER SECTION
+    ============================================================ */
+    #newsletter {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 0;
+    }
+
+    .newsletter-inner {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .newsletter-inner h2 {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .newsletter-inner > p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px 16px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, .1);
+      color: var(--white);
+      font-family: var(--font-serif);
+      font-size: 1rem;
+    }
+
+    .newsletter-form input[type="email"]::placeholder { color: rgba(255,255,255,.55); }
+
+    .newsletter-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .newsletter-form button {
+      padding: 12px 28px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .newsletter-form button:hover { background: var(--gold-bright); }
+
+    .newsletter-disclaimer {
+      color: rgba(255, 255, 255, .5);
+      font-size: 0.8rem;
+      margin-top: 12px;
+      font-family: var(--font-sans);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 36px 0;
+      text-align: center;
+      border-top: 1px solid rgba(201, 168, 76, .2);
+    }
+
+    .footer-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    /* ============================================================
+       BACK TO TOP
+    ============================================================ */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+      z-index: 999;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover { transform: translateY(-3px); }
+
+    /* ============================================================
+       SCROLL ANIMATIONS
+    ============================================================ */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: none;
+    }
+
+    .animate-slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .animate-slide-left.animated {
+      opacity: 1;
+      transform: none;
+    }
+
+    .animate-slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .animate-slide-right.animated {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLET
+    ============================================================ */
+    @media (max-width: 900px) {
+      .pain-cards,
+      .stakes-cards,
+      .packages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .about-intro {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .headshot {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .diocesan-mentoring-body ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE
+    ============================================================ */
+    @media (max-width: 640px) {
+      section { padding: 60px 0; }
+
+      .pain-cards,
+      .stakes-cards,
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      .testimonial-card {
+        padding: 28px 20px;
+      }
+
+      .nav-brand-text { display: none; }
+
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-dark);
+        border-top: 1px solid rgba(201, 168, 76, .25);
+        padding: 12px 24px 20px;
+        z-index: 1001;
+      }
+
+      .nav-links.active { display: flex; }
+
+      .nav-links a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+        width: 100%;
+      }
+
+      .nav-links .nav-portal {
+        margin-top: 10px;
+        border-radius: 4px;
+        width: auto;
+      }
+
+      .diocesan-mentoring-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+
+      .hero { padding: 120px 0 80px; }
+
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input[type="email"],
+      .newsletter-form button { width: 100%; min-width: unset; }
+    }
+  </style>
+
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a2744">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,7 +1415,10 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-brand"><img src="icons/icon.svg" alt="Seton Educational Services, LLC" class="nav-logo" width="100" height="100"> <span class="nav-brand-text">Seton Educational Services, LLC</span></a>
+      <a href="#" class="nav-brand">
+        <img src="icons/icon.svg" alt="Seton Educational Services, LLC" class="nav-logo" width="60" height="60">
+        <span class="nav-brand-text">Seton Educational Services</span>
+      </a>
       <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle navigation">&#9776;</button>
       <div class="nav-links">
         <a href="#pain-points">The Reality</a>
@@ -198,6 +1428,7 @@
         <a href="#testimonials">Testimonials</a>
         <a href="faq/">FAQ</a>
         <a href="blog/">Blog</a>
+        <a href="https://cascone96.pythonanywhere.com/login.html" class="nav-portal">Client Portal &rarr;</a>
       </div>
     </div>
   </nav>
@@ -205,19 +1436,10 @@
   <!-- HERO — THE HOOK -->
   <section class="hero">
     <div class="container">
-      <p class="hero-eyebrow">For Catholic School Principals</p>
+      <p class="hero-eyebrow">&#10013;&ensp;For Catholic School Principals</p>
       <h1>You were called to lead.<br>But no one prepared you for this.</h1>
       <p class="subtitle">Catholic school principals carry an extraordinary weight — the mission, the operations, the people, the finances — often with little training and no one in their corner. If that sounds familiar, you're not alone. And it doesn't have to stay this way.</p>
       <a href="#contact" class="btn btn-primary">Schedule a Free Consultation</a>
-      <!-- VIDEO BOX — hidden until video is ready
-      <div class="video-box" style="margin-top:40px;">
-        <h3>A Message from Dr. Cascone</h3>
-        <div class="video-placeholder">
-          <div class="video-placeholder-icon">&#9654;</div>
-          <p>Video coming soon</p>
-        </div>
-      </div>
-      -->
     </div>
   </section>
 
@@ -307,14 +1529,14 @@
   </section>
 
   <!-- OUR NAMESAKE -->
-  <section id="namesake" style="background:var(--navy); color:var(--white);">
+  <section id="namesake">
     <div class="container">
       <div class="section-header">
-        <h2 style="color:#fff;">Our Namesake</h2>
-        <div class="accent-line" style="background:var(--gold);"></div>
+        <h2>Our Namesake</h2>
+        <div class="accent-line"></div>
       </div>
-      <div style="max-width:800px; margin:0 auto; text-align:center;">
-        <p style="font-size:1.1rem; line-height:1.8; color:rgba(255,255,255,0.9);">Seton Educational Services is named in honor of <strong style="color:#c9a84c;">St. Elizabeth Ann Seton</strong>, the first American-born saint and patron saint of Catholic schools. A pioneer in Catholic education, she founded the first free Catholic school in America and established the Sisters of Charity, dedicating her life to forming young minds in faith and knowledge. Her vision and courage continue to inspire Catholic school leaders today, and her legacy is the foundation upon which our mission is built.</p>
+      <div class="namesake-body">
+        <p>Seton Educational Services is named in honor of <strong style="color:var(--gold);">St. Elizabeth Ann Seton</strong>, the first American-born saint and patron saint of Catholic schools. A pioneer in Catholic education, she founded the first free Catholic school in America and established the Sisters of Charity, dedicating her life to forming young minds in faith and knowledge. Her vision and courage continue to inspire Catholic school leaders today, and her legacy is the foundation upon which our mission is built.</p>
       </div>
     </div>
   </section>
@@ -328,18 +1550,18 @@
         <p>Tailored consulting for individual principals and diocesan school offices</p>
         <p style="max-width:700px; margin:12px auto 0; font-size:1rem; color:#555;">All programs are designed in alignment with the goals of pastors and diocesan school offices, ensuring that principal development supports the broader mission and vision of the diocese.</p>
       </div>
-      <div style="background:#faf3dc; border-left:4px solid #c9a84c; padding:20px 25px; margin-bottom:30px; border-radius:4px; max-width:800px; margin-left:auto; margin-right:auto;">
-        <p style="margin:0; color:#1a2744; font-size:1rem;">
-          <strong>Funding Opportunity:</strong> Catholic schools may be eligible to use <strong>Title II, Part A (ESSA)</strong> equitable services funding to cover the cost of consulting and professional development services at no cost to the school. <a href="title-ii-funding.html" style="color:#6b1d2a; font-weight:600;">Learn how Title II-A funding works &rarr;</a>
-        </p>
+
+      <div class="funding-notice">
+        <p><strong>Funding Opportunity:</strong> Catholic schools may be eligible to use <strong>Title II, Part A (ESSA)</strong> equitable services funding to cover the cost of consulting and professional development services at no cost to the school. <a href="title-ii-funding.html">Learn how Title II-A funding works &rarr;</a></p>
       </div>
+
       <div class="packages-grid">
 
         <!-- NEW PRINCIPAL COACHING -->
         <div class="package-card">
           <div class="package-header">
             <h3>New Principal Coaching</h3>
-            <div class="price"><a href="#contact" style="color:inherit; text-decoration:none;">Contact for Quote</a></div>
+            <div class="price"><a href="#contact">Contact for Quote</a></div>
           </div>
           <div class="package-body">
             <ul>
@@ -363,7 +1585,7 @@
         <div class="package-card">
           <div class="package-header">
             <h3>Leadership Development</h3>
-            <div class="price"><a href="#contact" style="color:inherit; text-decoration:none;">Contact for Quote</a></div>
+            <div class="price"><a href="#contact">Contact for Quote</a></div>
           </div>
           <div class="package-body">
             <ul>
@@ -387,7 +1609,7 @@
         <div class="package-card">
           <div class="package-header">
             <h3>School Turnaround Support</h3>
-            <div class="price"><a href="#contact" style="color:inherit; text-decoration:none;">Contact for Quote</a></div>
+            <div class="price"><a href="#contact">Contact for Quote</a></div>
           </div>
           <div class="package-body">
             <ul>
@@ -413,7 +1635,7 @@
       <div class="diocesan-mentoring-card">
         <div class="diocesan-mentoring-header">
           <h3>Diocesan Mentoring Programs</h3>
-          <div class="price"><a href="#contact" style="color:inherit; text-decoration:none;">Contact for Quote</a></div>
+          <div class="price"><a href="#contact">Contact for Quote</a></div>
         </div>
         <div class="diocesan-mentoring-body">
           <p>Already have a principal mentoring program that isn't meeting your needs? Let Seton Educational Services become your complete principal mentoring solution. All of my consulting services can be tailored to serve as your diocese's entire principal mentoring program — replacing or restructuring what isn't working.</p>
@@ -428,21 +1650,16 @@
         </div>
       </div>
 
-      <div style="background:#faf3dc; border-left:4px solid #c9a84c; padding:22px 28px; margin-top:35px; border-radius:6px; max-width:800px; margin-left:auto; margin-right:auto; text-align:center;">
-        <p style="margin:0; color:#1a2744; font-size:1.15rem; font-weight:600;">
-          Diocesan and archdiocesan office contracts are customized based on scope and scale. <a href="#contact" style="color:#6b1d2a; font-weight:700;">Contact me</a> for a tailored proposal.
-        </p>
-        <p style="margin:8px 0 0; color:#666; font-size:0.9rem;">Travel costs for on-site visits are billed separately.</p>
+      <div class="diocesan-note">
+        <p>Diocesan and archdiocesan office contracts are customized based on scope and scale. <a href="#contact">Contact me</a> for a tailored proposal.</p>
+        <p>Travel costs for on-site visits are billed separately.</p>
       </div>
-      <p style="text-align:center; margin-top:15px; color:#666; font-size:0.95rem;">
-        These packages represent just a starting point. Whether you need a keynote speaker, a workshop for principals, a strategic planning facilitator, or something else entirely — I can tailor a program to meet your specific needs. <a href="#contact" style="color:#c9a84c;">Let's talk about what you're looking for.</a>
+
+      <p class="services-cta-note">
+        These packages represent just a starting point. Whether you need a keynote speaker, a workshop for principals, a strategic planning facilitator, or something else entirely — I can tailor a program to meet your specific needs. <a href="#contact">Let's talk about what you're looking for.</a>
       </p>
-      <div style="background:#1a2744; padding:25px 30px; margin-top:30px; border-radius:8px; max-width:800px; margin-left:auto; margin-right:auto; text-align:center; border:2px solid #c9a84c;">
-        <p style="margin:0 0 8px 0; color:#c9a84c; font-size:1.2rem; font-weight:bold; letter-spacing:1px;">CHARTER CLIENT OFFER</p>
-        <p style="margin:0 0 8px 0; color:#fff; font-size:1.05rem; line-height:1.7;">Commit to a 12-month package by <strong style="color:#c9a84c;">May 1, 2026</strong> and lock in today's rates for the life of your agreement — plus receive your <strong style="color:#c9a84c;">first month free</strong>.</p>
-        <p style="margin:0; color:rgba(255,255,255,0.7); font-size:0.9rem;">Join an exclusive group of charter clients. This offer is limited and won't last.</p>
-        <a href="#contact" style="display:inline-block; margin-top:15px; padding:10px 30px; background:#c9a84c; color:#1a2744; text-decoration:none; border-radius:4px; font-weight:bold; font-size:0.95rem;">Claim Your Spot</a>
-      </div>
+
+
     </div>
   </section>
 
@@ -450,7 +1667,7 @@
   <section id="speaking">
     <div class="container">
       <div class="section-header">
-        <h2>Speaking & Presentations</h2>
+        <h2>Speaking &amp; Presentations</h2>
         <div class="accent-line"></div>
         <p>Engaging keynotes and workshops for conferences, convocations, and retreats</p>
       </div>
@@ -486,29 +1703,33 @@
           <div class="contact-detail">
             <strong>Phone:</strong> <span>(816) 695-8817</span>
           </div>
-          <p style="margin-top:20px; font-size:0.9rem; color:#666;">Available for engagements nationwide. Virtual and in-person consulting options.</p>
+          <p class="contact-note">Available for engagements nationwide. Virtual and in-person consulting options.</p>
         </div>
         <form class="contact-form" action="https://formspree.io/f/mnjbzzda" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="role">Your Role</label>
-          <select id="role" name="role">
-            <option value="">Select your role...</option>
-            <option value="principal">Principal</option>
-            <option value="assistant-principal">Assistant Principal</option>
-            <option value="superintendent">Superintendent</option>
-            <option value="school-office">Diocesan School Office Staff</option>
-            <option value="pastor">Pastor</option>
-            <option value="other">Other</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me about your needs..."></textarea>
-
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="role">Your Role</label>
+            <select id="role" name="role">
+              <option value="">Select your role...</option>
+              <option value="principal">Principal</option>
+              <option value="assistant-principal">Assistant Principal</option>
+              <option value="superintendent">Superintendent</option>
+              <option value="school-office">Diocesan School Office Staff</option>
+              <option value="pastor">Pastor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your needs..."></textarea>
+          </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
@@ -528,23 +1749,23 @@
         <div class="testimonials-viewport">
           <div class="testimonials-track">
             <div class="testimonial-card">
-              <blockquote>"Dr. Cascone served our archdiocese with distinction as the Superintendent of Schools, combining strong leadership with a deep commitment to the mission of Catholic education. Principals consistently relied on his wisdom, integrity, practical guidance and leadership skills. I am confident this consulting ministry will be a tremendous blessing to Catholic school leaders and the communities they serve."</blockquote>
+              <blockquote>Dr. Cascone served our archdiocese with distinction as the Superintendent of Schools, combining strong leadership with a deep commitment to the mission of Catholic education. Principals consistently relied on his wisdom, integrity, practical guidance and leadership skills. I am confident this consulting ministry will be a tremendous blessing to Catholic school leaders and the communities they serve.</blockquote>
               <cite>— Archbishop Emeritus Joseph Naumann, Archdiocese of Kansas City in Kansas</cite>
             </div>
             <div class="testimonial-card">
-              <blockquote>"For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect."</blockquote>
+              <blockquote>For eleven years, Dr. Vincent Cascone and I worked closely together, serving as pastor and principal in a Kansas City Mo. parish where quality education was highly valued. Leading such a school meant that Vince's job was both challenging and multifaceted as he was continually required to balance the often-conflicting expectations of teachers, students, and parents. Throughout his tenure, there was a broad community consensus that Dr. Cascone managed these responsibilities with both wisdom and expertise, earning his leadership widespread respect.</blockquote>
               <cite>— Fr. Pat Rush, Former Pastor</cite>
             </div>
             <div class="testimonial-card">
-              <blockquote>"What I appreciate about Vince is how he cultivates and maintains relationships and makes them a priority. This is a trait that successful leaders possess, and his clients will not only learn it from him but see it in action."</blockquote>
+              <blockquote>What I appreciate about Vince is how he cultivates and maintains relationships and makes them a priority. This is a trait that successful leaders possess, and his clients will not only learn it from him but see it in action.</blockquote>
               <cite>— Dr. Kathy O'Hara, Former Superintendent, Archdiocese of Kansas City in Kansas</cite>
             </div>
             <div class="testimonial-card">
-              <blockquote>"I worked as a principal in the Archdiocese of Kansas City, Kansas for five years under Dr. Cascone. He not only helped me grow as a school administrator, but provided the kind of support I needed as I began my career in administration. Dr. Cascone is a listener who pushes school leaders to find solutions that are best for everyone involved and aligned with our mission and calling as Catholic school leaders."</blockquote>
+              <blockquote>I worked as a principal in the Archdiocese of Kansas City, Kansas for five years under Dr. Cascone. He not only helped me grow as a school administrator, but provided the kind of support I needed as I began my career in administration. Dr. Cascone is a listener who pushes school leaders to find solutions that are best for everyone involved and aligned with our mission and calling as Catholic school leaders.</blockquote>
               <cite>— Mr. Kevin O'Brien, Principal, Bishop Ward High School</cite>
             </div>
             <div class="testimonial-card">
-              <blockquote>"As a principal with more than 40 years of experience in Catholic education, I have had the distinct privilege of working with Dr. Cascone both in my role as Assistant Superintendent and as a school principal. He approaches his leadership as a true servant of Christ, grounding his work in faith, integrity, and a deep commitment to the mission of Catholic schools. Dr. Cascone has a remarkable ability to cultivate strong, trusting relationships with principals, building their confidence and professional capacity—especially those new to the vocation of school leadership. He not only develops effective administrators, but also faith-filled leaders who understand that their work is a ministry. Through his guidance, mentorship, and witness to Gospel values, he empowers principals to grow into exemplary leaders dedicated to academic excellence and the spiritual formation of their school communities."</blockquote>
+              <blockquote>As a principal with more than 40 years of experience in Catholic education, I have had the distinct privilege of working with Dr. Cascone both in my role as Assistant Superintendent and as a school principal. He approaches his leadership as a true servant of Christ, grounding his work in faith, integrity, and a deep commitment to the mission of Catholic schools. Dr. Cascone has a remarkable ability to cultivate strong, trusting relationships with principals, building their confidence and professional capacity—especially those new to the vocation of school leadership. He not only develops effective administrators, but also faith-filled leaders who understand that their work is a ministry. Through his guidance, mentorship, and witness to Gospel values, he empowers principals to grow into exemplary leaders dedicated to academic excellence and the spiritual formation of their school communities.</blockquote>
               <cite>— Dr. Maureen Huppe, Former Associate Superintendent and Principal</cite>
             </div>
           </div>
@@ -586,25 +1807,27 @@
   </section>
 
   <!-- NEWSLETTER SIGNUP -->
-  <section id="newsletter" style="background:var(--navy); color:var(--white); padding:60px 0;">
-    <div class="container" style="text-align:center; max-width:650px;">
-      <h2 style="color:#fff; font-size:1.8rem; margin-bottom:8px;">Servant Leader Monday</h2>
-      <div class="accent-line" style="background:var(--gold); margin:0 auto 20px;"></div>
-      <p style="color:rgba(255,255,255,0.9); font-size:1.1rem; line-height:1.7; margin-bottom:25px;">One actionable servant leadership insight for Catholic school leaders, delivered to your inbox every Monday morning. No fluff. Just 31 years of experience distilled into a 3-minute read.</p>
-      <form action="https://formspree.io/f/mnjbzzda" method="POST" style="display:flex; gap:12px; max-width:500px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
-        <input type="hidden" name="_subject" value="Servant Leader Monday Newsletter Signup">
-        <input type="hidden" name="form_type" value="newsletter">
-        <input type="email" name="email" placeholder="Your email address" required style="flex:1; min-width:250px; padding:12px 16px; border:2px solid rgba(255,255,255,0.3); border-radius:4px; background:rgba(255,255,255,0.1); color:#fff; font-size:1rem;">
-        <button type="submit" style="padding:12px 28px; background:#c9a84c; color:#1a2744; border:none; border-radius:4px; font-weight:bold; font-size:1rem; cursor:pointer;">Subscribe</button>
-      </form>
-      <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; margin-top:12px;">Free. Unsubscribe anytime. No spam — just leadership insights.</p>
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <h2>Servant Leader Monday</h2>
+        <div class="accent-line"></div>
+        <p>One actionable servant leadership insight for Catholic school leaders, delivered to your inbox every Monday morning. No fluff. Just 31 years of experience distilled into a 3-minute read.</p>
+        <form class="newsletter-form" action="https://formspree.io/f/mnjbzzda" method="POST">
+          <input type="hidden" name="_subject" value="Servant Leader Monday Newsletter Signup">
+          <input type="hidden" name="form_type" value="newsletter">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-disclaimer">Free. Unsubscribe anytime. No spam — just leadership insights.</p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p style="font-style:italic; color:#c9a84c; margin-bottom:10px; font-size:0.95rem;">"Live simply so that others might simply live." — St. Elizabeth Ann Seton</p>
+      <p class="footer-quote">"Live simply so that others might simply live." — St. Elizabeth Ann Seton</p>
       <p>&copy; 2026 Seton Educational Services, LLC. All rights reserved. | <a href="#contact">vcascone@setoned.org</a> | <a href="capability-statement.html">Capability Statement</a></p>
     </div>
   </footer>
